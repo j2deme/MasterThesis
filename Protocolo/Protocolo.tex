@@ -1,0 +1,160 @@
+\documentclass[12pt,letterpaper,titlepage]{article}
+\usepackage[spanish,USenglish]{babel}
+%\usepackage[latin1]{inputenc}
+%\usepackage[spanish]{babel}
+\usepackage[utf8x]{inputenc}
+%\usepackage{ucs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+%\usepackage{natbib}
+\usepackage[bookmarks]{hyperref}
+\usepackage{appendix}
+\usepackage{multirow}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+	\fancyhf{}%Borra todas las configuraciones
+	\fancyhead[L]{\footnotesize \leftmark}%Alineado a la izquierda CAPITULO # %TITULO DE %CAPITULO
+	\fancyhead[R]{\footnotesize \thepage}%Alineado a la derecha numero de pagina
+	\fancyfoot[C]{\footnotesize \thepage}%Centrado numero de pagina
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{13.5pt}
+\usepackage{comment}
+\usepackage{rotating}
+\usepackage[hypcap]{caption}
+\usepackage{anysize}
+\marginsize{3cm}{2.5cm}{2.5cm}{2.5cm}
+\setcounter{secnumdepth}{3}
+\usepackage{tikz}
+\usepackage{gantt}
+\usepackage{pdflscape}
+\usepackage{booktabs}
+\usepackage[capbesideposition=inside,facing=yes,capbesidesep=quad]{floatrow}
+\newfloatcommand{capbtabbox}{table}[][\FBwidth]% Table float bx with btm caption, bx width adjusted to content
+\usepackage{blindtext}
+
+\author{Jaime Jes\'us Delgado Meraz}
+\title{Plataforma web para el análisis de la gesticulación facial}
+%\date{\today}
+%\renewcommand{\familydefault}{\sfdefault}
+\newcommand{\grad}{\hspace{-1.5mm}$\phantom{a}^{\circ}$}
+\newcommand{\head}[1]{\textnormal{\textbf{#1}}}
+
+\let\OLDthebibliography=\thebibliography
+\def\thebibliography#1{\OLDthebibliography{#1}%
+\addcontentsline{toc}{section}{\refname}}
+
+\begin{document}
+%----------------------------------------------------------------
+%\selectlanguage{spanish}
+\newpage
+\setlength{\unitlength}{1 cm}
+\thispagestyle{empty}
+	\begin{picture}(4,4)
+		\put(4.3,0){\includegraphics[width=5cm,height=4cm]{images/itcv.jpg}}
+	\end{picture}
+\\
+	\begin{center}
+\textbf{{\Huge Instituto Tecnol\'ogico de Ciudad Victoria}\\[0.5cm]
+{\large Maestr\'ia Profesionalizante en Sistemas Computacionales}}\\[1cm]
+{\Large Thesis protocol}\\[1.3cm]
+{\LARGE \textbf{Plataforma web para el an\'alisis de la gesticulaci\'on facial}}\\[1.5cm]
+{\large Jaime Jes\'us Delgado Meraz}\\[1cm]
+\textbf{Thesis Advisor:}\\
+Dr. Pedro Luis S\'anchez Orellana\\[0.7cm]
+\textbf{Thesis Co-advisor:}\\
+Dr. Jos\'e Torres Jim\'enez\\[0.7cm]
+{\large Scholarship:DGEST }\\[0.7cm]
+Ciudad Victoria, Tamaulipas -  \today\
+\end{center}
+
+%\selectlanguage{USenglish}
+\clearpage
+\setlength{\parskip}{0mm}
+\tableofcontents
+\clearpage
+\setlength{\parskip}{5mm}
+%----------------------------------------------------------------
+\section{Introduction}
+\subsection{Justification and Motivation}
+Human interaction is very important in many different aspects in our daily life, such as business meeting, medical diagnostics, etc. However, thanks to the improvement of technology, this operations can be done remotely, which can be especially useful when the distance is considered a barrier. Nevertheless, this producess another problem which is the lack of physical gesture apreciation (product of non-presencial interaction), since gesture comunication is considered as an important part in human comunication. To solve this issue, we propose the use of a web service that allows to remotely evaluate gestures.
+
+\subsection{Problem Statement}
+Given a sequence of images from the face, taken in a client computer, where the illumination conditions and background motion are restricted, the problem of analyzing facial gestures on the web, could be stated as an architecture that allows transmission of compressed images through a web service, in order to produce an analysis of facial gestures (by the use of an existing algorithm). This algorithm focuses on the detection of symmetry of facial gesticulations and its goal is to help in the decision-making process. From this we state the following research questions:
+\begin{itemize}
+\item Considering the speed of internet connections in M\'exico, what techniques can be used to increase the speed of image transfer?
+\item Which type of web service is more suitable for image transmission/analysis?
+\end{itemize}
+
+\subsection{Hypothesis}
+Nowadays, Internet technologies (such as REST web services) are optimized for low bandwith consumption; nonetheless, in order to obtain a more efficient analysis it is necessary to reduce the amount transfered information. At this point image compression techniques could increase the speed of the analysis by providing fast transmission of images through internet.
+
+\subsection{Objectives}
+\subsubsection{General}
+Design a web architecture that allows the efficient transmission of facial image sequences to compute an analysis about the behaviour of facial gesticulations, in order to obtain symmetrical/asymmetrical motion patterns which might be used for the decision-making process.
+\subsubsection{Specifics}
+\begin{itemize}
+\item Implement an image compression technique that allows fast Internet broadcasting.
+\item Design and implement a web architecture for the reception and decompression of compressed images.
+\item Adapt a given algorithm for the analysis of gesticulations in the transmitted images.
+\item Design a set of experiments to test the web architecture.
+\end{itemize}
+
+\subsection{Research Scope and Constraints}
+The proposed architecture will focus only on the compression-transmission process of images, it will not consider the motion from other regions of the body. Moreover, the mechanisms for the analysis of the image sequences were generated in collaboration with researchers of the Universidad Polit\'ecnica de Victoria and will only be used, but not implemented.
+
+%\subsection{Constraints}
+
+\newpage
+\section{State of the Art}
+\subsection{Face Analysis}
+	\input{face-analysis}
+\subsection{Neural Networks}
+	\input{neural-networks}
+\subsection{Web Services}
+	\input{web-services}
+\subsection{Image Compression}
+	\input{image-ct}
+\subsection{Experimental Designs}
+	\input{experimental}
+
+\clearpage
+\section{Methodology}
+This proposal is basically divided into 3 stages:
+\begin{description}
+\item[1st Stage] In this stage, the different techniques for image compression/decompression will be studied, in order to choose a set of them to be implemented and tested. Once the implementations of the selected techniques have been made, they will be tested and compared to choose only one that will be integrated into a client application. This client application will be responsible of capturing the images for their compression by the selected technique.
+
+\item[2nd Stage] In this stage, the different approaches for web services will be analized, to choose the most appropriate solution for the problem to be solved. Also, a local web server will be mounted, to implement the chosen web service model. Once the web service has been implemented, the decompression technique to reverse the technique selected on the previous stage, will be setup on the web service, this, in order to connect the client to the server to send the compressed images, and then testing the process of transmission-reception-decompression. Based on the results from the previous test, the necessary adjustments will be made to ensure both the proper functioning of the connection between the client and server, and the reception of the original image as captured by the client.
+
+\item[3rd Stage] In this stage, the work will be focused on the adaptation of the algorithm for facial gestures analysis, since it was originally developed to work in a local environment. This adaptation will include a mechanism to interact with the compression/decompression technique previously developed, and a mechanism to retrieve and process the results from the facial gesture analysis algorithm, also, a user interface for displaying the results of the analysis will be created.
+
+Finally, a set of experiments oriented to test the different components of the architecture (such as compression, quality of results, processing time, etc.) will be developed and applied. Also, a user's manual for the created architecture will be elaborated.
+\end{description}
+%\section{Schedule}
+\input{schedule}
+\clearpage
+\section{Infraestructure}
+As infrastructure for the development of this work are considered the following components:
+\begin{itemize}
+\item Laptop HP Pavilion DV5-1135la
+	\begin{description}
+	\item[OS] Ubuntu Linux 11.10 (32 bits).
+	\item[Microprocessor] AMD Turion X2 Dual-Core Mobile Processor RM-72 (2.1 GHz).
+	\item[Memory] 3072MB 800MHz DDR2 System Memory (2 Dimm).
+	\item[Video Graphics] ATI Radeon HD 3450 Graphics (1533MB total graphics memory with 256MB dedicated).
+	\item[Hard Drive] 320 GB (5400 RPM).
+	\item[Webcam] Webcam HP Pavilion (VGA low-light)
+		\begin{description}
+		\item[Resolution] 648$\times$480.
+		\item[FPS] 30 fps.
+		\end{description}
+	\end{description}
+\item Both the client and the server, will be developed on open source software.
+\end{itemize}
+\clearpage
+\bibliographystyle{acm}
+%\bibliographystyle{unsrt}
+\bibliography{Protocolo}
+\end{document}

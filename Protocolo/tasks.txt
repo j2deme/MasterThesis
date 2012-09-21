@@ -1,0 +1,32 @@
+Set up the client
+- Study the different image compression techniques
+- Choose and implement a set of image compression techniques
+- Test and compare the implementations of the selected techniques
+- Implement a client application to capture images
+- Implement the selected compression technique on the client
+
+Set up the server
+- Study the different web services models
+- Choose the most suitable web service model for the problem
+- Mount a local web server
+- Implement the web service architecture on the server
+- Implement the decompression technique
+- Connect the client and the server
+- Test the transmission-reception-decompression process
+- Make necessary adjustments on both client and server
+
+Adequate the Facial Gestures Analysis Algorithm
+- Link the algorithm to the reception-decompression mechanism
+- Link the algorithm to the mechanism for the processing of results.
+- Create a user interface to visualize the results from the analysis.
+
+Test the architecture
+- Design a set of experiments to test the architecture
+- Apply and analyze the designed experiments
+- Adjust parameters of the architecture based on the results from the experiments
+
+Document the architecture
+- Create a manual for the use of the architecture
+
+
+

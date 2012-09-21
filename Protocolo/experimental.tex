@@ -1,0 +1,93 @@
+\subsubsection{Introduction}
+The experimental design is a key piece in the software development process given that it allows identifying failures in the software before it begins to operate. A good strategy to test a software involves the generation of the whole set of cases that participate in its operation. However, testing all the possible cases of a program requires a great amount of time, which can be inadmissible even for small programs\cite{Cohen:2003}. For example, in the scenario of a system with 10 parameters having 5 different values there are 9,765,625 different cases. In general, the number of cases is exponential in the number of parameters.
+
+An alternative strategy to test software is the use of Covering Arrays (CAs). A Covering Array (CA) is a combinatorial object that, with a small number of cases, covers a certain level of interaction of a set of parameters. The meaning of a level of interaction relates any subset of $t$ parameters of a matrix to the set of the $v^{t}$ different combinatios derived from $v$ different values. The confidence level of the testing using combinatorial objects as CA increases with the interaction level involveld \cite{Kuhn:2008}.
+
+\subsubsection{Covering Arrays}
+The Covering Arrays (CAs) are mathematical objects with minimal coverage and maximum cardinality that are a good tool for the design of experiments. A covering array is an $N \times k$ matrix over an alphabet $v$ each $N \times k$ subset contains at least one time each combination from ${0,1,\ldots,v−1}^{t}$, given a positive integer value $t$.
+
+Covering Arrays have been an object of study and application in different research areas. Cawse \cite{Cawse:2003} used CAs in the material design, Hedayat et al. \cite{Hedayat:1999} used them in medicine and agriculture; in biology and industrial processes have also been used by Shasha et al. \cite{Shasha:2001} and Phadke\cite{Phadke:1995}. CAs have been used in hardware testing \cite{Vadde:2004}, but significantly the area with the major application of these objects is in software testing\cite{Burr:1998,Yilmaz:2004}.
+
+Let $N$, $t$, $k$, and $v$ be positive integers with $t \leq k$. A covering array denoted by CA($N$; $t$,$k$,$v$), of alphabet $v$ and strength $t$ is an array $\mathcal{M}$ of size $N \times k$, where each element $m_{i,j}$ takes values from the set $S = \{0,1,2,\ldots,v-1\}$ and each subset of $\mathcal{M}$ of size $N \times t$ contains all the possible combinations derived from $\{0,1,\ldots,v-1\}^{t}$ symbols. A subset of size $N \times $ is known as a $t$-tuple.
+
+To illustrate the CA approach applied to the design of software testing, consider the Web-based system example shown in Table \ref{tb:WebParameters}, the example involves four parameters each with three possible values.
+
+\begin{table}[h]
+%\scriptsize
+%\begin{floatrow}
+%\ttabbox{
+\begin{center}
+\begin{tabular}{ccccc}
+  \toprule[1.5pt]
+  \head{} & \head{Browser} & \head{OS} & \head{DBMS} & \head{Connections}\\
+  \midrule
+  0	& Firefox & Windows & MySQL & ISDN\\
+  1 & Chromium & Ubuntu & PostgreSQL & ADSL\\
+  2 & Netscape & Red Hat & MaxDB & Cable\\
+  \bottomrule[1.5pt]
+\end{tabular}
+\end{center}
+\caption{Parameters of Web-based system example} 
+\label{tb:WebParameters}
+%}
+%\end{floatrow}
+\end{table}
+
+\begin{figure}[h]
+\begin{center}
+	$
+    \begin{pmatrix}
+    0 & 0 & 0 & 0 \\
+    0 & 1 & 1 & 1 \\
+    0 & 2 & 2 & 2 \\
+    1 & 0 & 1 & 2 \\
+    1 & 1 & 2 & 0 \\
+    1 & 2 & 0 & 1 \\
+    2 & 0 & 2 & 1 \\
+    2 & 1 & 0 & 2 \\
+    2 & 2 & 1 & 0 \\
+	\end{pmatrix}
+	$
+	\caption{Test-suite covering all 2-way interactions, CA(9; 2, 4, 3)}
+    \label{fig:testsuite}
+\end{center}
+\end{figure}
+
+\begin{table}[h]
+%\scriptsize
+\begin{center}
+\begin{tabular}{ccccc}
+  \toprule[1.5pt]
+  \head{Experiments} & \head{} & \head{} & \head{} & \head{}\\
+  \midrule
+	1 & Firefox & Windows & MySQL & ISDN\\
+	2 & Firefox & Ubuntu & PostgreSQL & ADSL\\
+	3 & Firefox & Red Hat & MaxDB & Cable\\
+	4 & Chromium & Windows & PostgreSQL & Cable\\
+	5 & Chromium & Ubuntu & MaxDB & ISDN\\
+	6 & Chromium & Red Hat & MySQL & ADSL\\
+	7 & Netscape & Windows & MaxDB & ADSL\\
+	8 & Netscape & Ubuntu & MySQL & Cable\\
+	9 & Netscape & Red Hat & PostgreSQL & ISDN\\
+  \bottomrule[1.5pt]
+\end{tabular}
+\end{center}
+\caption{Mapping the CA(9; 2, 4, 3) to the corresponding pair-wise test suite} 
+\label{tb:Mapping}
+\end{table}
+
+A full experimental design ($t = 4$) should cover $3^{4}= 81$ possibilities, however, if the interaction is relaxed to $t = 2$ (pair-wise), then the number of possible combinations is reduced to $9$ test cases (which represents a reduction of the 90 percent in the number of cases required). Figure \ref{fig:testsuite} shows the CA corresponding to CA(9; 2, 4, 3); given that its strength and alphabet are $t = 2$ and $v = 3$, respectively, the combinations that must appear at least once in each subset of size $N \times 2$ are \{\{0, 0\}, \{0, 1\},
+\{0, 2\}, \{1, 0\}, \{1, 1\}, \{1, 2\}, \{2, 0\}, \{2, 1\}, \{2, 2\}\}.
+
+Finally, to make the mapping between the CA and the Web-based system, every possible value of each parameter in Table \ref{tb:WebParameters} is labeled by the row number. Table \ref{tb:Mapping} shows the corresponding pair-wise test suite; each of its nine experiments is analogous to one row of the CA shown in Fig. \ref{fig:testsuite}.
+
+When a CA contains the minimum possible number of rows, it is optimal and its size is called the \textit{Covering Array Number} (CAN). The CAN is defined according to
+$$
+\text{CAN}(t,k,v) = \text{min}\{N:\exists\text{CA}(N;t,k,v)\}
+$$
+
+The trivial mathematical \textit{lower bound} for a covering array is $v^{t} \leq \text{CAN}(t, k ,v)$, however, this number is rarely achieved. Therefore, determining achievable bounds is one of the main research lines for CAs. Given the values of $t$, $k$, and $v$, the optimal CA construction problem (CAC) consists in constructing a CA($N; t, k, v$) such that the value of $N$ is minimized.
+
+Some of the algorithms used to solve the CAC problem are approximated, meaning that rather than constructing optimal CAs, they construct matrices of size close to that value. Some of these approximated strategies must verify that the matrix they are building is a CA. If the matrix is of size $N \times k$ and the interaction is $t$, there are $\binom{k}{t}$ different combinations which implies a cost of $O(N \times \binom{k}{t})$ for the verification.
+
+For small values of $t$ and $v$, the verfication of CAs is overcome through the use of sequential approaches; however, in the construction of CAs of moderate values of $t$, $v$ and $k$, the time spent by those approaches is impractical. Then, the necessity of parallel or grid strategies to solve the verification of CAs appears.

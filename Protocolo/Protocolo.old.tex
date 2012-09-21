@@ -1,0 +1,109 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[utf8x]{inputenc}
+%\usepackage[spanish]{babel}
+\usepackage{ucs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{natbib}
+%\usepackage{hyperref}
+\usepackage[bookmarks]{hyperref}%,colorlinks,citecolor=black,linkcolor=black,urlcolor=black
+\usepackage{appendix}
+\usepackage{multirow}
+%Adds ability to change enumerators:
+% [I] for capital roman numbers
+% [(a)] for small alpha-characters within brackets
+\usepackage{enumerate}
+%Glossary
+\usepackage[toc]{glossaries}
+\makeglossaries
+%Mejora la calidad del PDF
+%\usepackage{pslatex}
+%Para crear el encabezado y pie de pagina a nuestro gusto
+\usepackage{fancyhdr}
+%Creamos el encabezado y pie de pagina
+\pagestyle{fancy}
+\fancyhf{}%Borra todas las configuraciones
+\fancyhead[L]{\footnotesize \leftmark}%Alineado a la izquierda CAPITULO # %TITULO DE %CAPITULO
+\fancyhead[R]{\footnotesize \thepage}%Alineado a la derecha numero de pagina
+\fancyfoot[C]{\footnotesize \thepage}%Centrado numero de pagina
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{13pt}%Aumentamos el tama\~no del contenedor para el %encabezado
+%Multiline comments
+\usepackage{comment}
+%Rotated Text
+\usepackage{rotating}
+%Modificar margenes
+\usepackage{anysize}
+%Para que en el indice no se pierdan las subsubseciones
+\setcounter{secnumdepth}{3}
+%Margenes izquierdo - derecho - superior - inferior
+\marginsize{3cm}{2.5cm}{2.5cm}{2.5cm}
+
+\author{Jaime Jesús Delgado Meraz}
+\title{Protocolo: Plataforma web para el análisis de la gesticulación facial}
+\date{\today}
+
+\renewcommand{\familydefault}{\sfdefault}
+%\renewcommand{\bibname}{Bibliograf{\'\i}a}
+%\renewcommand{\refname}{Bibliograf{\'\i}a}
+%\renewcommand{\contentsname}{Indice}
+%\renewcommand\appendixname{Anexo}
+%\renewcommand\appendixtocname{Anexos}
+%\renewcommand\appendixpagename{ANEXOS}
+%\renewcommand{\listtablename}{Indice de tablas} 
+%\renewcommand{\tablename}{Tabla} 
+
+\newcommand{\grad}{\hspace{-1.5mm}$\phantom{a}^{\circ}$}
+% Uncomment to customize item icon
+%\renewcommand{\labelitemi}{$\bullet$}
+%\renewcommand{\labelitemii}{$\cdot$}
+%\renewcommand{\labelitemiii}{$\diamond$}
+%\renewcommand{\labelitemiv}{$\ast$}
+
+\let\OLDthebibliography=\thebibliography
+\def\thebibliography#1{\OLDthebibliography{#1}%
+\addcontentsline{toc}{section}{\refname}}
+
+\begin{document}
+\maketitle
+\clearpage
+\setlength{\parskip}{0mm}
+\tableofcontents
+%\listoffigures
+\listoftables
+\clearpage
+\setlength{\parskip}{5mm}
+\include{glossary-entries}
+
+\section{Face Analysis}
+	\input{face-analysis}
+\section{Neural Networks}
+	\input{neural-networks}
+\section{Web Services}
+	\input{web-services}
+\section{Image Compression Techniques}
+\section{Experimental Designs}
+
+\section{Problem Statement}
+No existe una herramienta que realize el an´alisis de gesticulaciones faciales a traves de internet
+\section{Hypothesis}
+\section{Objectives}
+\section{Justification}
+\section{Scope}
+\newpage
+\printglossaries
+%\addcontentsline{toc}{chapter}{Glossary}
+
+%\nocite{Solutions}
+%Everything added here will be in appendix
+%\appendix
+%\clearpage
+%\addappheadtotoc
+%\appendixpage
+
+%Bibliography
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{Protocolo,web-services,face-analysis,neural-networks}
+\end{document}
