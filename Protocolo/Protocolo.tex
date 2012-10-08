@@ -1,39 +1,48 @@
 \documentclass[12pt,letterpaper,titlepage]{article}
 \usepackage[spanish,USenglish]{babel}
-%\usepackage[latin1]{inputenc}
-%\usepackage[spanish]{babel}
 \usepackage[utf8x]{inputenc}
-%\usepackage{ucs}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
-%\usepackage{natbib}
 \usepackage[bookmarks]{hyperref}
 \usepackage{appendix}
 \usepackage{multirow}
 \usepackage{enumerate}
 \usepackage{fancyhdr}
-\pagestyle{fancy}
-	\fancyhf{}%Borra todas las configuraciones
-	\fancyhead[L]{\footnotesize \leftmark}%Alineado a la izquierda CAPITULO # %TITULO DE %CAPITULO
-	\fancyhead[R]{\footnotesize \thepage}%Alineado a la derecha numero de pagina
-	\fancyfoot[C]{\footnotesize \thepage}%Centrado numero de pagina
-\renewcommand{\headrulewidth}{0.4pt}
-\setlength{\headheight}{13.5pt}
 \usepackage{comment}
 \usepackage{rotating}
 \usepackage[hypcap]{caption}
 \usepackage{anysize}
-\marginsize{3cm}{2.5cm}{2.5cm}{2.5cm}
-\setcounter{secnumdepth}{3}
 \usepackage{tikz}
 \usepackage{gantt}
 \usepackage{pdflscape}
 \usepackage{booktabs}
 \usepackage[capbesideposition=inside,facing=yes,capbesidesep=quad]{floatrow}
-\newfloatcommand{capbtabbox}{table}[][\FBwidth]% Table float bx with btm caption, bx width adjusted to content
 \usepackage{blindtext}
+%\usepackage[latin1]{inputenc}
+%\usepackage[spanish]{babel}
+%\usepackage{ucs}
+%\usepackage{natbib}
+
+% FANCY HEADER CONFIGURATION
+% 1. Delete all settings
+% 2. [HEAD] Aligned to left CHAPTER # %Title of chapter
+% 3. [HEAD] Aligned to right page numberAlineado a la derecha numero de pagina
+% 4. [FOOT] Centered page number
+\pagestyle{fancy}
+	\fancyhf{}
+	\fancyhead[L]{\footnotesize \leftmark}
+	\fancyhead[R]{\footnotesize \thepage}
+	\fancyfoot[C]{\footnotesize \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{13.5pt}
+% SET MARGINS
+\marginsize{3cm}{2.5cm}{2.5cm}{2.5cm}
+% SET TOC DEEP
+\setcounter{secnumdepth}{3}
+% Table float bx with btm caption, bx width adjusted to content
+\newfloatcommand{capbtabbox}{table}[][\FBwidth]
 
 \author{Jaime Jes\'us Delgado Meraz}
 \title{Plataforma web para el análisis de la gesticulación facial}
@@ -105,8 +114,6 @@ Design a web architecture that allows the efficient transmission of facial image
 \subsection{Research Scope and Constraints}
 The proposed architecture will focus only on the compression-transmission process of images, it will not consider the motion from other regions of the body. Moreover, the mechanisms for the analysis of the image sequences were generated in collaboration with researchers of the Universidad Polit\'ecnica de Victoria and will only be used, but not implemented.
 
-%\subsection{Constraints}
-
 \newpage
 \section{State of the Art}
 \subsection{Face Analysis}
@@ -132,8 +139,9 @@ This proposal is basically divided into 3 stages:
 
 Finally, a set of experiments oriented to test the different components of the architecture (such as compression, quality of results, processing time, etc.) will be developed and applied. Also, a user's manual for the created architecture will be elaborated.
 \end{description}
-%\section{Schedule}
+
 \input{schedule}
+
 \clearpage
 \section{Infraestructure}
 As infrastructure for the development of this work are considered the following components:
@@ -154,7 +162,7 @@ As infrastructure for the development of this work are considered the following 
 \item Both the client and the server, will be developed on open source software.
 \end{itemize}
 \clearpage
-\bibliographystyle{acm}
 %\bibliographystyle{unsrt}
+\bibliographystyle{acm}
 \bibliography{Protocolo}
 \end{document}
