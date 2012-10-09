@@ -1,25 +1,31 @@
+% arara: pdflatex
+% arara: bibtex
+% arara: pdflatex
+% arara: pdflatex
+% arara: clean: { files: [Protocolo.aux, Protocolo.idx, Protocolo.ilg, Protocolo.ind, Protocolo.log]}
+% arara: clean: { files: [Protocolo.bbl, Protocolo.blg, Protocolo.out, Protocolo.toc]}
 \documentclass[12pt,letterpaper,titlepage]{article}
 \usepackage[spanish,USenglish]{babel}
 \usepackage[utf8x]{inputenc}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{graphicx}
 \usepackage[bookmarks]{hyperref}
+\usepackage[capbesideposition=inside,facing=yes,capbesidesep=quad]{floatrow}
+\usepackage[hypcap]{caption}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{anysize}
 \usepackage{appendix}
-\usepackage{multirow}
+\usepackage{blindtext}
+\usepackage{booktabs}
+\usepackage{comment}
 \usepackage{enumerate}
 \usepackage{fancyhdr}
-\usepackage{comment}
-\usepackage{rotating}
-\usepackage[hypcap]{caption}
-\usepackage{anysize}
-\usepackage{tikz}
 \usepackage{gantt}
+\usepackage{graphicx}
+\usepackage{multirow}
 \usepackage{pdflscape}
-\usepackage{booktabs}
-\usepackage[capbesideposition=inside,facing=yes,capbesidesep=quad]{floatrow}
-\usepackage{blindtext}
+\usepackage{rotating}
+\usepackage{tikz}
 %\usepackage[latin1]{inputenc}
 %\usepackage[spanish]{babel}
 %\usepackage{ucs}
