@@ -11,7 +11,7 @@ Traditionally, computational applications have tried to interpret emotion by ass
 
 However, this task is complex, since involves temporal processing of muscles contractions. To approach this problem, one can look at biological systems that perform this analysis accurately. An example of this is the human brain, which can perform the analysis even under varying environment conditions like: illumination changes, occlusion and pose changes. This is a motivation for the developing of bio-inspired systems based on the behavior of the amygdala, more precisely modeling the neuron interaction for analysis facial motion produced by the gestures.
 
-From all the involved parts gesture eye gaze is the most important element since it express sincerity and credibility. Together, all the elements of facial muscles can transmit the feelings of the speaker, from happiness, to depth concern. This was previously affirmed by Darwin (1872), who stated that facial gesticulation for emotion transmition is innate and very similar for all people, since we evolved very similarly. His theory was not accepted before due to some detractors like Bruner et al. (Bruner \& Tagiuri, 1954). Later, Ekman et al. \cite{Hager1979} solved this issue definitively by pointing out methodological problems that had confused other researchers. They showed that observers could agree on how to label both posed and spontaneous facial expressions in terms of either emotional categories or emotional dimensions. Much evidence, including reanalysis of negative studies, indicated that facial expressions can provide accurate information about emotion.
+From all the involved parts gesture eye gaze is the most important element since it express sincerity and credibility. Together, all the elements of the facial muscles can transmit the feelings of the speaker, from happiness, to depth concern. This was previously affirmed by Darwin (1872), who stated that facial gesticulation for emotion transmition is innate and very similar for all people, since we evolved very similarly. His theory was not accepted before due to some detractors like Bruner et al. (Bruner \& Tagiuri, 1954). Later, Ekman et al. \cite{Hager1979} solved this issue definitively by pointing out methodological problems that had confused other researchers. They showed that observers could agree on how to label both posed and spontaneous facial expressions in terms of either emotional categories or emotional dimensions. Much evidence, including reanalysis of negative studies, indicated that facial expressions can provide accurate information about emotion.
 
 Therefore the analysis of facial expressions constitutes a critical and complex portion of our non-verbal social interactions. Over the past years there has been an increasing interest on developing automated computational tools for facial expression analysis.
 
@@ -19,9 +19,9 @@ Therefore the analysis of facial expressions constitutes a critical and complex 
 However, the automatic facial expression analysis is a complex task, on one hand face structure distribution is different from one individual to another. On the other, faces are analyzed from sequences of images captured in environments with variations (such as lighting, pose and scale changes) that difficult the extraction of this structure. From the computational point of view, this problem implies the classification of facial motion and facial structure deformation into abstract representations completely based on visual information.
 \end{comment}
 
-To address this analysis it is necessary to perform two main tasks: face acquisition and facial feature extraction. In the first one, techniques have been developed to deal with the extraction and normalization of the face considering variations in the pose %\cite{Essa1997, Rowley1998} 
-and illumination. %\cite{Fellenz1999, Belhumeur1997}. 
-However, most of the effort has focused to the feature extraction issue~\cite{Fasel2003}, since techniques like appearance-based model %\cite{Lanitis1997, Kim2004, RuizdelSolar2008} 
+To address this analysis it is necessary to perform two main tasks: face acquisition and facial feature extraction. In the first one, techniques have been developed to deal with the extraction and normalization of the face, considering variations in the pose %\cite{Essa1997, Rowley1998}
+and illumination. %\cite{Fellenz1999, Belhumeur1997}.
+However, most of the effort has been focused on the feature extraction issue~\cite{Fasel2003}, since techniques like appearance-based model %\cite{Lanitis1997, Kim2004, RuizdelSolar2008}
 try to deal with significant variations in the acquired face images without relying on normalization.
 
 \begin{figure}[ht]
@@ -34,8 +34,8 @@ try to deal with significant variations in the acquired face images without rely
 The analysis problem has been approached from two main streams~\cite{Fasel2003}: facial deformation extraction models and facial motion extraction models. Motion extraction approaches directly focus on facial changes produced by facial expressions, whereas deformation-based methods contrast the visual information against face models to extract features product of expressions and not by age deformation like wrinkles.
 
 \begin{comment}
-In the case of deformation methods the extraction of features relies on shape and texture changes through a period of time. On one hand the holistic approaches either use the whole face \cite{JyostnaDevi2010}%, Nair2011} 
-or partial information about regions in the face like mouth or eyes \cite{Gu2012}.%, Venkatesh2009, Maalej2011}. 
+In the case of deformation methods the extraction of features relies on shape and texture changes through a period of time. On one hand the holistic approaches either use the whole face \cite{JyostnaDevi2010}%, Nair2011}
+or partial information about regions in the face like mouth or eyes \cite{Gu2012}.%, Venkatesh2009, Maalej2011}.
 In the case of the motion extraction, the features are extracted by analyzing motion vectors, again this can be done holistically %\cite{Dornaika2011, Sanchez2011}
 , and locally.%\cite{Park2009, Xiang2008, Wang2009}.
 \end{comment}
@@ -45,10 +45,11 @@ Another approach to solve this problem, is by looking at biological systems that
 The cortical nucleus is involved in the sense of smell and pheromone-processing. It receives input from the olfactory bulb and olfactory cortex. The lateral amygdala, which send impulses to the rest of the basolateral complexes and to the centromedial nuclei, receive input from the sensory systems. The centromedial nuclei are the main outputs for the basolateral complexes, and are involved in emotional arousal in rats and cats. Several studies confirm that the amygdala receives inputs from visual cortex when it comes to emotion processing. Lateralization of processing visual information in the amygdala might indicate symmetry analysis activity which was first found by Ekman et al \cite{Hager1979}. In their studies they found that emotion understanding is directly related to symmetrical analysis of opposed facial regions.
 
 This information is relevant since provides hints on the role of the amygdala during the expression of emotions and visual interpretation of them. How the visual information is processed remains unclear, but it is known that the information is processed laterally (information is processed in one hemisphere). This can be used as a source of inspiration to build a neural architecture that allows processing opposed facial regions to interpretate emotions. Previously some researchers have used traditional neural networks (NN) to recognize emotions from face images\cite{Spiros2005}%, MatsuguKatsuhiko2003, MuhammadPrevost2008}
-; however, NN in those works are used for recognition purposes though symmetry understanding in facial gestures requires analyzing the evolution of muscles during gesticulation rather than just comparing gesture moments. This means that not all neural networks models are adequate for this task, in fact NN approaches can be classified in 3 generations, the two first are usually related to recognition tasks while the third also allows temporal information processing.
+; however, NN in those works are used for recognition purposes though symmetry understanding in facial gestures requires analyzing the evolution of muscles during gesticulation rather than comparing gesture moments. This means that not all neural networks models are adequate for this task, in fact NN approaches can be classified in 3 generations, the two first are usually related to recognition tasks while the third also allows temporal information processing.
 
 \subsubsection{Generations of Neural Networks}
-Over the past hundred years, research has accumulated knowledge about the structure and function of the brain. The elementary processing units in the central nervous system are neurons which are connected to each other in an intricate pattern. Examples of this types of neurons are sketched in Figure \ref{fig:NeuronTypes} which shows a drawing by Ram\'on y Cajal, one of the pioneers of neuroscience around 1900. In his work, he distinguished several types of neurons, with different physical structures like triangular or circular. This picture gives a glimpse of the network of neurons in the cortex. In fact, cortical neurons and their connections are packed into a dense network with more than 104 cell bodies and several kilometers of ``wires'' per cubic millimeter. In all areas, however, neurons of different sizes and shapes form the basic elements. Wolfgang Maass (Maass, 1997) outline past and current artificial neural network research into three generations and made the following observations~\cite{Maass1996}.
+Over the past hundred years, research has accumulated knowledge about the structure and function of the brain. The elementary processing units in the central nervous system are neurons which are connected to each other in an intricate pattern. Examples of this types of neurons are sketched in Figure \ref{fig:NeuronTypes} which shows a drawing by Ram\'on y Cajal, one of the pioneers of neuroscience around 1900. In his work, he distinguished several types of neurons, with different physical structures like triangular or circular. This picture gives a glimpse of the network of neurons in the cortex. In fact, cortical neurons and their connections are packed into a dense network with more than 104 cell bodies and several kilometers of ``wires'' per cubic millimeter. In all areas, however, neurons of different sizes and shapes form the basic elements. Wolfgang Maass %(Maass, 1997)%
+outlined past and current artificial neural network research into three generations and made the following observations~\cite{Maass1996}.
 
 \begin{figure}[ht]
     \centering
@@ -65,7 +66,7 @@ In the literature there are different computational models that intent to simula
 
 The \textbf{first generation} is based on the McCulloch-Pitts neuron (also known as a perceptron or a threshold-gate) as the basic computation unit. Models of the first generation, such as the multi-layer perceptron, use digital input and output, usually binary or bipolar. The perceptron is a type of artificial neural network (ANN) invented in 1957 at the Cornell Aeronautical Laboratory by Frank Rosenblatt~\cite{Rosenblatt1960}.
 
-The \textbf{second generation} is based on computation units (neurons) that use an activation function of a continuous set of possible output values.% Commonly, these activation functions are the sigmoid, $f(x) = 1 / 1 + e^{- \sigma x}$, or the hyperbolic tangent, $f(x) = (1 - e^{-2x}) / (1 + e^{-2x})$. 
+The \textbf{second generation} is based on computation units (neurons) that use an activation function of a continuous set of possible output values.% Commonly, these activation functions are the sigmoid, $f(x) = 1 / 1 + e^{- \sigma x}$, or the hyperbolic tangent, $f(x) = (1 - e^{-2x}) / (1 + e^{-2x})$.
 This generation, like first one, can compute arbitrary boolean functions (after using a threshold). Also, a concept of hidden layer appeared, through it more complex functions can be approximated~\cite{Rosenblatt1962}. Important to many implementations is the fact that second generation networks support learning algorithms based on gradient descent, such as error back-propagation.
 
 \begin{figure}[ht]
@@ -146,7 +147,7 @@ with the auxiliary after-spike resetting.
 
 \begin{eqnarray}
 \label{eq:2}
-\mbox{if} \enspace v \ge +30\mbox{mV}, \quad 
+\mbox{if} \enspace v \ge +30\mbox{mV}, \quad
 \mbox{then}
 \left\{
 \begin{array}{lr}
@@ -167,7 +168,7 @@ We stress that $+30 mV$ in equation \ref{eq:3} is not a threshold, but the peak 
 \subsubsection{Spiking Neural Networks}
 In practice, there is a major difference between the theoretical power of spiking neural networks. Some large scale neural network models have been designed to take advantage of pulse coding found in spiking neural networks. One of the most exciting characteristics of spiking neural networks (with the potential to create a step-change in our knowledge of neural computation) is that they are innately embedded in time \cite{Maass1996}.
 
-Spike latencies, axonal conduction delays, refractory periods, neuron resonance and network oscillations all give rise to an intrinsic ability to process time-varying data in a more natural and computationally powerful way than is available to 2nd generation models. Real brains are embedded in a time-varying environment; almost all real-world data and human or animal mental processing has a temporal dimension. Evidence is growing that rhythmic brain oscillations are strongly connected to cognitive processing.% \cite{Klimesch1999, Basar2001, Engel2001, Kahana2001, Ward2003}. 
+Spike latencies, axonal conduction delays, refractory periods, neuron resonance and network oscillations all give rise to an intrinsic ability to process time-varying data in a more natural and computationally powerful way than is available to 2nd generation models. Real brains are embedded in a time-varying environment; almost all real-world data and human or animal mental processing has a temporal dimension. Evidence is growing that rhythmic brain oscillations are strongly connected to cognitive processing.% \cite{Klimesch1999, Basar2001, Engel2001, Kahana2001, Ward2003}.
 This type of processing is well suited to problems like face gesticulation characterization, since this problem implies the processing of spatial features over time periods to abstract their relations over time.
 
 \begin{figure}[h]
@@ -182,12 +183,12 @@ This type of processing is well suited to problems like face gesticulation chara
 \scriptsize
 %\footnotesize
 \begin{center}
-\begin{tabular}{|p{3.0cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.4cm}|} \hline \hline 
-\bf Models & 
+\begin{tabular}{|p{3.0cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.1cm}|p{0.4cm}|} \hline \hline
+\bf Models &
 \multicolumn{1}{c|}
 {\begin{sideways}
 biophysically meaningful \
-\end{sideways}} & 
+\end{sideways}} &
 {\begin{sideways}
 tonic spiking \
 \end{sideways}} &
@@ -267,7 +268,7 @@ $\sharp$ of FLOOPS \
 \bf Hodgkin-Huxley & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ &  &  & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ &  & $\bullet$ & 1200 \\  \hline \hline
 \end{tabular}
 \end{center}
-\caption{Comparison of the neuro-computational properties of spiking and bursting models \cite{Izhikevich2004}.} 
+\caption{Comparison of the neuro-computational properties of spiking and bursting models \cite{Izhikevich2004}.}
 \label{tb:ModelsComparison}
 \end{table}
 \end{comment}
@@ -282,6 +283,6 @@ In the literature there are several SNN models that have different characteristi
 %\end{figure}
 
 %Linking part with Web services and image compression techniques
-The gesture analysis methods, traditionally, can be used in situations like job interviews or business meetings where participants are in the same place, however, nowadays these events are carried out online, thereby decreasing the perception of those involved. Therefore arises the need of a tool or architecture that allows the use gesture analysis methods online, but this task is not trivial, because it requires mechanisms for exchanging data between the client and the server. This issue could be solved by the use of web services, a technology that has been used for streaming video and audio.
+The gesture analysis methods, traditionally, can be used in situations like job interviews or business meetings where participants are in the same place, however, nowadays these events are carried out online, thereby decreasing the perception of those involved. Therefore arises the need of a tool or architecture that allows the use of gesture analysis methods online, but this task is not trivial, because it requires mechanisms for exchanging data between the client and the server. This issue could be solved by the use of web services, a technology that has been used for streaming video and audio.
 
 However, given the characteristics of Internet services in the country, the transfer of information would not be very optimal, therefore a technique that allows the compression of images without loss of quality, is needed, in order to be able to perform the gesture analysis more efficiently.
