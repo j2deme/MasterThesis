@@ -1,7 +1,7 @@
 \subsubsection{Introduction}
 The experimental design is a key piece in the software development process given that it allows identifying failures in the software before it begins to operate. A good strategy to test a software involves the generation of the whole set of cases that participate in its operation. However, testing all the possible cases of a program requires a great amount of time, which can be inadmissible even for small programs\cite{Cohen:2003}. For example, in the scenario of a system with 10 parameters having 5 different values there are 9,765,625 different cases. In general, the number of cases is exponential in the number of parameters.
 
-An alternative strategy to test software is the use of Covering Arrays (CAs). A Covering Array (CA) is a combinatorial object that, with a small number of cases, covers a certain level of interaction of a set of parameters. The meaning of a level of interaction relates any subset of $t$ parameters of a matrix to the set of the $v^{t}$ different combinatios derived from $v$ different values. The confidence level of the testing using combinatorial objects as CA increases with the interaction level involveld \cite{Kuhn:2008}.
+An alternative strategy to test software is the use of Covering Arrays (CAs). A Covering Array (CA) is a combinatorial object that, with a small number of cases, covers a certain level of interaction of a set of parameters. The meaning of a level of interaction relates any subset of $t$ parameters of a matrix to the set of the $v^{t}$ different combinations derived from $v$ different values. The confidence level of the testing using combinatorial objects as CA increases with the interaction level involveld \cite{Kuhn:2008}.
 
 \subsubsection{Covering Arrays}
 The Covering Arrays (CAs) are mathematical objects with minimal coverage and maximum cardinality that are a good tool for the design of experiments. A covering array is an $N \times k$ matrix over an alphabet $v$ each $N \times k$ subset contains at least one time each combination from ${0,1,\ldots,v−1}^{t}$, given a positive integer value $t$.
@@ -27,7 +27,7 @@ To illustrate the CA approach applied to the design of software testing, conside
   \bottomrule[1.5pt]
 \end{tabular}
 \end{center}
-\caption{Parameters of Web-based system example} 
+\caption{Parameters of Web-based system example}
 \label{tb:WebParameters}
 %}
 %\end{floatrow}
@@ -72,7 +72,7 @@ To illustrate the CA approach applied to the design of software testing, conside
   \bottomrule[1.5pt]
 \end{tabular}
 \end{center}
-\caption{Mapping the CA(9; 2, 4, 3) to the corresponding pair-wise test suite} 
+\caption{Mapping the CA(9; 2, 4, 3) to the corresponding pair-wise test suite}
 \label{tb:Mapping}
 \end{table}
 
