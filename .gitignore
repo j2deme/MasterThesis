@@ -66,3 +66,6 @@ build/config/buildinfo.properties
 *.toc
 *.vrb
 *.xdy
+
+#My ignores
+Protocolo.zip
