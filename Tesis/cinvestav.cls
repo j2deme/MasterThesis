@@ -13,7 +13,7 @@
 \RequirePackage{setspace}
 %\RequirePackage[T1]{fontenc}
 %\RequirePackage{avant}
-\renewcommand{\familydefault}{\sfdefault}
+%\renewcommand{\familydefault}{\sfdefault}
 %\bibfont{\sfdefault}
 
 
@@ -27,7 +27,7 @@
     \def\@Thesisname{Tesis}
     \def\@degreename{#1}
    }
- 
+
 \newcommand{\eslang}[1]{\def\@eslang{#1}}
 \eslang{}
 \newcommand{\esfinal}[1]{\def\@esfinal{#1}}
@@ -35,6 +35,7 @@
 
 \RequirePackage{algorithm}
 
+\RequirePackage[spanish,USenglish]{babel}
 % Properly clear the global variables and commands
 % (is is more a convention to prevent confusion with
 % symbols defined at other scopes)
@@ -57,14 +58,6 @@
 } %gtp
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand\@ptsize{}
@@ -758,15 +751,6 @@
 \fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 \ifx\@eslang\@empty
 
@@ -797,8 +781,8 @@
 \def\@thesisnameen{thesis}
 \def\@date{Agrega fecha de graduaci\'on}
 \def\@city{Ciudad Victoria, Tamaulipas}
-\def\@degreein{Ciencias Computaci\'{o}n}
-\def\@degreeinen{Computer Science}
+\def\@degreein{Sistemas Computacionales}
+\def\@degreeinen{Computer Systems}
 
 
 
@@ -930,27 +914,37 @@
       \ColumnSave
       \begin {center}
         \ifx\@eslang\@empty
-        \sffamily
-        {\Huge \sffamily\bfseries Centro de Investigaci\'{o}n y de Estudios Avanzados del IPN} \\
-        \vspace{1.5cm}
-              
-        {\Large Programa Institucional de Computaci\'{o}n}\\
-        \vspace{0.5cm}
-        {\Large \@department\\ \Large Unidad \@campus}\\
-        \vspace{1.5cm}
-              {\Huge \textbf{\@titlesize \@title} }\\
-              \vspace{1cm}
-              {\huge  \@Thesisname} \\
-              \vspace{1cm}
-              {\large  
-              Que para obtener el grado de:} \\
-             \vspace{1cm}
-              {\large \bf \@degreename\ }\\
-             \vspace{1.5cm}
-              {\large Presenta} \\
-             \vspace{1cm}
-              \textbf{\LARGE \bf \@author} \\
-              \vspace{1cm}
+        \setlength{\unitlength}{1 cm}
+        \begin{center}
+        {\Huge \bf Instituto Tecnol\'ogico de Ciudad Victoria}\\[0.5cm]
+        {\Large \@department}\\[0.5cm]
+        {\large \bf Maestr\'ia Profesionalizante en Sistemas Computacionales}\\[1cm]
+        {\Large Tesis}\\[1.3cm]
+        {\LARGE \textbf{\@title}}\\[1.5cm]
+        {\large Que para obtener el grado de:}\\[1cm]
+        {\large \bf\@degreename\ }\\[1.5cm]
+        {\large Presenta}\\[1cm]
+        {\LARGE \bf \@author}\\[1cm]
+        \end{center}
+%        \sffamily{\Huge \sffamily\bfseries Insituto Tecnol\'{o}gico de Ciudad Victoria} \\
+%        \vspace{1.5cm}
+
+%        {\Large Maestr\'{i}a Profesionalizante en Sistemas Computacionales}\\
+%        \vspace{0.5cm}
+        %{\Large \@department\\ \Large Unidad \@campus}\\
+%        \vspace{1.5cm}
+%              {\Huge \textbf{\@titlesize \@title} }\\
+%              \vspace{1cm}
+%              {\huge  \@Thesisname} \\
+%              \vspace{1cm}
+%              {\large Que para obtener el grado de:} \\
+%             \vspace{1cm}
+%              {\large \bf \@degreename\ }\\
+%             \vspace{1.5cm}
+%              {\large Presenta} \\
+%             \vspace{1cm}
+%              \textbf{\LARGE \bf \@author} \\
+%              \vspace{1cm}
               {\large
               \ifnum\c@chairs>2
               \@chairC, Co-Director\\
@@ -979,7 +973,7 @@
               \vspace{1cm}
               {\huge  \@Thesisnameen} \\
               \vspace{1cm}
-              {\large  
+              {\large
               as the fulfillment of the\\ requirement for the degree of:} \\
              \vspace{1cm}
               {\large \bf \@degreenameen\ }\\
@@ -1023,17 +1017,17 @@
         \begin{tabular}{cc}
           \begin{minipage}{3cm}
             \ifpdf
-            \vspace{-1cm}\hspace{-2.2cm}\includegraphics[scale=0.08]{cinvestav2.jpg}
+            \vspace{-1cm}\hspace{-2.2cm}\includegraphics[width=5cm,height=4cm]{itcv.jpg}
             \else
-            \vspace{-1cm}\hspace{-2.2cm}\includegraphics[scale=0.08]{cinvestav2.eps}
+            \vspace{-1cm}\hspace{-2.2cm}\includegraphics[scale=0.08]{itcv.eps}
             \fi
           \end{minipage}&
           \vspace{-.5cm}
             \begin{minipage}{10cm}
               \centering
-              \vspace{-1.5cm}{\hspace{-3cm} \large\textsc{Centro de Investigaci\'{o}n y de Estudios Avanzados}}\\
+              \vspace{-1.5cm}{\hspace{-3cm} \large\textsc{Instituto Tecnol\'{o}gico de Ciudad Victoria}}\\
 %                {\hspace{-3cm} \large\textsc{del}}\\
-                \vspace{.1cm}{\hspace{-3cm} \large \textsc{del Instituto Polit\'{e}cnico Nacional}} \\
+%                \vspace{.1cm}{\hspace{-3cm} \large \textsc{del Instituto Polit\'{e}cnico Nacional}} \\
             \end{minipage}
             \end{tabular}
 %            \hspace{-3cm}
@@ -1048,11 +1042,11 @@
               \vspace{1cm}
               \textbf{\Large \bf \@author} \\
               \vspace{1cm}
-              {\Large  
+              {\Large
               Para obtener el grado de:} \\
              \vspace{1cm}
               {\large \bf \@degreename\ }\\
-              {\large \bf en Computaci\'{o}n}\\
+              %{\large \bf en Computaci\'{o}n}\\
 
               {\large
               \ifnum\c@chairs>2
@@ -1065,7 +1059,7 @@
               \@chairA, Co-Director\\
               \else\ifnum\c@chairs>0
               \vspace{1.5cm}
-              Director de la Tesis:\\  
+              Director de la Tesis:\\
               \@chairA\\
               \vspace{2cm}
               \else\typeout{Sin director de Tesis.}
@@ -1073,11 +1067,11 @@
             }
           \end{minipage}
 %          \end{tabular}
-     
+
       \end {center}
 %\vspace{.5cm}
 \@city \hspace{6cm} \@degreemonth , \@degreeyear\\
-%      {\normalsize 
+%      {\normalsize
 %        \begin{tabular}{lr}
 %          \hspace{-0.5cm}\@city & \@degreemonthen , \@degreeyear\\
 %        \end{tabular}
@@ -1093,9 +1087,9 @@
         \begin{tabular}{cc}
           \begin{minipage}{3cm}
             \ifpdf
-            \vspace{-1cm}\hspace{-2.2cm}\includegraphics[scale=0.08]{cinvestav2.jpg}
+            \vspace{-1cm}\hspace{-2.2cm}\includegraphics[scale=0.08]{itcv.jpg}
             \else
-            \vspace{-1cm}\hspace{-2.2cm}\includegraphics[scale=0.08]{cinvestav2.eps}
+            \vspace{-1cm}\hspace{-2.2cm}\includegraphics[scale=0.08]{itcv.eps}
             \fi
           \end{minipage}&
           \vspace{-.5cm}
@@ -1118,7 +1112,7 @@
               \vspace{1cm}
               \textbf{\Large \bf \@author} \\
               \vspace{1cm}
-              {\Large  
+              {\Large
               as the fulfillment of the\\ requirement for the degree of:} \\
              \vspace{1cm}
               {\large \bf \@degreenameen\ }\\
@@ -1135,7 +1129,7 @@
               \@chairA, Co-Director\\
               \else\ifnum\c@chairs>0
               \vspace{1.5cm}
-              Thesis Director:\\  
+              Thesis Director:\\
               \@chairA\\
               \vspace{2cm}
               \else\typeout{Sin director de Tesis.}
@@ -1143,11 +1137,11 @@
             }
           \end{minipage}
 %          \end{tabular}
-     
+
       \end {center}
 %\vspace{.5cm}
 \@city \hspace{6cm} \@degreemonthen , \@degreeyear\\
-%      {\normalsize 
+%      {\normalsize
 %        \begin{tabular}{lr}
 %          \hspace{-0.5cm}\@city & \@degreemonthen , \@degreeyear\\
 %        \end{tabular}
@@ -1165,15 +1159,15 @@
         \begin{tabular}{cc}
           \begin{minipage}{3cm}
             \ifpdf
-            \vspace{-1cm}\hspace{-1cm}\includegraphics[scale=0.1]{cinvestav2.jpg}
+            \vspace{-1cm}\hspace{-1cm}\includegraphics[scale=0.1]{itcv.jpg}
             \else
-            \vspace{-1cm}\hspace{-1cm}\includegraphics[scale=0.1]{cinvestav2.eps}
+            \vspace{-1cm}\hspace{-1cm}\includegraphics[scale=0.1]{itcv.eps}
             \fi
           \end{minipage}&
             \begin{minipage}{10cm}
               \centering
               \vspace{-1cm}{\LARGE \sffamily\bfseries Research Center for Advanced Study} \\
-              
+
             \@pagetitleline{\large Institutional Computing Program\\\large \@departmenten\\ \large \@campus\ Campus}
             \end{minipage}\\
             \begin{minipage}{3cm}
@@ -1187,7 +1181,7 @@
               \vspace{1cm}
               {\huge  \@Thesisnameen} \\
               \vspace{1cm}
-              {\large  
+              {\large
               as the fulfillment of the\\ requirement for the degree of:} \\
              \vspace{1cm}
               {\large \bf \@degreenameen\ }\\
@@ -1213,10 +1207,10 @@
             }
           \end{minipage}
           \end{tabular}
-     
+
       \end {center}
 \@city \hspace{10cm} \@degreemonthen , \@degreeyear\\
-      {\normalsize 
+      {\normalsize
         \begin{tabular}{lr}
           \hspace{-0.5cm}\@city & \@degreemonthen , \@degreeyear\\
         \end{tabular}
@@ -1323,10 +1317,10 @@
 }
 
 \newcommand\@pagetitleline[1]{
-   \rule{4in}{0.03in} \\ 
-%   {\vspace{-0.35cm}\rule{4in}{0.03in}} \\ 
+   \rule{4in}{0.03in} \\
+%   {\vspace{-0.35cm}\rule{4in}{0.03in}} \\
 %   {\vspace{-0.4cm}\rule{4in}{0.01in}} \\ \vskip-2pt{#1} \\
-   {\vspace{-0.35cm}\rule{4in}{0.00in}} \\ 
+   {\vspace{-0.35cm}\rule{4in}{0.00in}} \\
    {\vspace{-0.4cm}\rule{4in}{0.00in}} \\ \vskip-2pt{#1} \\
    \vskip 46pt plus0pt minus15pt%
 }
@@ -1345,15 +1339,15 @@
 \newcommand\@makesignaturepage{
    \ColumnSave
    \chapter*{}
-   
+
 %   \setcounter{page}{2}
-   
+
    \noindent
    \renewcommand\baselinestretch{\@doublespacing}\@normalsize
    \thispagestyle{empty}%
 
    \begin{center}
-   \normalsize \normalfont La \@thesisname\ presentada por \@author\ fue aprobada por:\\ 
+   \normalsize \normalfont La \@thesisname\ presentada por \@author\ fue aprobada por:\\
  \end{center}
  \vskip 20pt
 \begin{center}
@@ -1392,10 +1386,10 @@
    \ColumnSave
    \chapter*{}
    \thispagestyle{empty}%
-   
+
    \pagenumbering{roman}
 %   \setcounter{page}{2}
-   
+
    \noindent
    \renewcommand\baselinestretch{\@doublespacing}\@normalsize
    \begin{center}
@@ -1656,7 +1650,7 @@
       \par\pagestyle{plain}
       \renewcommand\baselinestretch{\@spacing}\@normalsize
       \addcontentsline{toc}{chapter}{Vita}
-      \chapter*{Vita} 
+      \chapter*{Vita}
       \vskip 12pt
       \ifnum\c@vitaitems>0  \@printvitaitem{\@vitaA} \fi
       \ifnum\c@vitaitems>1  \@printvitaitem{\@vitaB} \fi
@@ -1842,7 +1836,7 @@
 
          \normalsize \normalfont
          % si fuera departamento seria in
-	 \if@department\  \@departmenten \fi\\ 
+	 \if@department\  \@departmenten \fi\\
          Research Center for Advanced Study from the   National Polytechnic Institute, \@degreeyear \\
          \ifnum\c@chairs>2
             \@chairA, Co-advisor \\
@@ -1900,7 +1894,7 @@
   \else
     \@maketitlepage
     \if@twoside
-      \typeout{Two-side detected.}    
+      \typeout{Two-side detected.}
       \pagebreak   % the back side of the title page
     \fi
   \if@openright\cleardoublepage\else\clearpage\fi
@@ -1912,7 +1906,7 @@
   % NOTE:  This extra page makes the output non-conforming
   % to the RFTADP, unless you throw it away.
   \if@twoside
-    \typeout{Two-side detected.}    
+    \typeout{Two-side detected.}
     \pagebreak   % the back side of the title page
   \fi
   \if@openright\cleardoublepage\else\clearpage\fi
@@ -1925,7 +1919,7 @@
     \@makesignaturepage
   \else
     \@makesignaturepageen
-  \fi  
+  \fi
 
   \if@openright\cleardoublepage\else\clearpage\fi
   \@makededication
@@ -1967,7 +1961,7 @@
   \else
   \addcontentsline{toc}{chapter}{List of Algorithms}
   \fi
-  
+
   \listofalgorithms
   \if@openright\cleardoublepage\else\clearpage\fi
   \@makevitapage
@@ -1984,7 +1978,7 @@
 % \onehalfspacing
    \setstretch{1.544}
   %\doublespacing
-  
+
 }
 
 
@@ -2054,7 +2048,7 @@
   \else
   \makeintropagesdraft
   \fi
-  
+
 }
 
 
