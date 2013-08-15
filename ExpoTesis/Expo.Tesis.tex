@@ -1,32 +1,18 @@
+% arara: pdflatex: { shell: yes }
+% arara: pdflatex: { shell: yes }
+% arara: clean: { files: [Expo.Tesis.aux, Expo.Tesis.log, Expo.Tesis.nav, Expo.Tesis.out, Expo.Tesis.snm, Expo.Tesis.toc, Expo.Tesis.idx, Expo.Tesis.ilg, Expo.Tesis.ind, Expo.Tesis.vrb, Expo.Tesis.fdb_latexmk, Expo.Tesis.pyg]}
 \documentclass[compress]{beamer}
 \mode<presentation>
 
 \usetheme{Warsaw} % Beamer Theme
-%\hypersetup{pdfpagemode=FullScreen} % makes your presentation go automatically to full screen
-%\usecolortheme{crane} % Beamer Color Theme
-%\useoutertheme[subsection=false]{smoothbars} % Beamer Outer Theme
-%\useinnertheme{rectangles}
-
-% Define your own colors:
-\definecolor{red}{rgb}{1,0,0}
-\definecolor{blue}{rgb}{0,0,1}
-\definecolor{green}{rgb}{0,1,0}
-\definecolor{magenta}{rgb}{1,0,.6}
-\definecolor{lightblue}{rgb}{0,.5,1}
-\definecolor{lightpurple}{rgb}{.6,.4,1}
-\definecolor{gold}{rgb}{.6,.5,0}
-\definecolor{orange}{rgb}{1,0.4,0}
-\definecolor{hotpink}{rgb}{1,0,0.5}
-\definecolor{newcolor2}{rgb}{.5,.3,.5}
-\definecolor{newcolor}{rgb}{0,.3,1}
-\definecolor{newcolor3}{rgb}{1,0,.35}
-\definecolor{darkgreen1}{rgb}{0, .35, 0}
-\definecolor{darkgreen}{rgb}{0, .6, 0}
-\definecolor{darkred}{rgb}{.75,0,0}
-
-\usepackage{beamerinnerthemecircles}
+\useoutertheme{infolines}
+\useinnertheme{circles} % Beamer inner Theme
+\setbeamertemplate{navigation symbols}{}
+\renewcommand{\figurename}{Figura}
+\setbeamertemplate{frametitle continuation}{}%\insertcontinuationcount
+%\usepackage{beamerinnerthemecircles}
 % inner themes include circles, default, inmargin, rectangles, rounded
-\usepackage{beamerouterthemesmoothbars}
+%\usepackage{beamerouterthemesmoothbars}
 %\useoutertheme[subsection=false]{smoothbars}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -44,7 +30,7 @@
 \usepackage{hyperref}
 \usepackage[utf8x]{inputenc}
 \usepackage{enumerate}
-
+\usepackage{comment}
 %%Pygments%%
 \usepackage{fancyvrb}
 \usepackage{color}
@@ -54,7 +40,7 @@
 
 \title{Plataforma web para el an\'alisis de la gesticulaci\'on facial}
 %\subtitle{POO}
-\author[Jaime Jes\'us Delgado Meraz]{Jaime Jes\'us Delgado Meraz\\{\small Advisor: Pedro Luis S\'anchez Orellana\\Co-advisor: Jos\'e Torres Jim\'enez}}
+\author[Jaime Jes\'us Delgado Meraz]{Jaime Jes\'us Delgado Meraz\\{\small Advisor: Pedro Luis S\'anchez Orellana}}
 \date{\today}
 \institute[ITCV]{Maestr\'ia Profesionalizante en Sistemas Computacionales\\Divisi\'on de Estudios de Posgrado de Investigaci\'on\\Instituto Tecnol\'ogico de Ciudad Victoria}
 
@@ -92,7 +78,7 @@
 
 \begin{frame}
 		\begin{figure}
-		\centering	
+		\centering
 		\includegraphics[scale=0.3]{img/microexpressions2.jpg}
 	\end{figure}
 \end{frame}
@@ -103,7 +89,7 @@
 	\item There are three main steps for working in facial gestures recognition:
 		\begin{enumerate}
 		\item Face detection,
-		\item Extraction of facial gestures information, and 
+		\item Extraction of facial gestures information, and
 		\item Classification of the information extracted.
 		\end{enumerate}.
 	\item The methods for facial gesture analysis can be grouped in \textbf{deformation} extraction and \textbf{motion} extraction.
@@ -155,7 +141,7 @@
 \begin{frame}
 	\frametitle{Objectives (cont.)}
 	\begin{block}{Specific}
-		\begin{enumerate}		
+		\begin{enumerate}
 		\item Implement an image compression technique that allows fast Internet broadcasting.
 		\item Design and implement a web architecture for the reception and decompression of compressed images.
 		\item Adapt a given algorithm for the analysis of gesticulations in the transmitted images.
@@ -168,8 +154,8 @@
 \begin{frame}
 	\frametitle{Scope and Constraints}
 	\begin{itemize}
-	\item The proposed architecture will focus only on the compression-transmission process of images, it will not consider the motion from other regions of the body.
-	\item Moreover, the mechanisms for the analysis of the image sequences were generated in collaboration with researchers of the Universidad Polit\'ecnica de Victoria and will only be used, but not implemented.
+	\item The proposed architecture focuses only on the compression-transmission process of images, and does not consider the motion from other regions of the body.
+	\item Moreover, the mechanisms for the analysis of the image sequences were generated in collaboration with researchers of the Universidad Polit\'ecnica de Victoria and were only used, but not implemented.
 	\end{itemize}
 \end{frame}
 
@@ -248,23 +234,28 @@
 \begin{frame}
 	\frametitle{Methodology}
 	\begin{description}
-\item[1st Stage] In this stage, the different techniques for image compression/decompression will be studied, in order to choose a set of them to be implemented and tested. Once the implementations of the selected techniques have been made, they will be tested and compared to choose only one that will be integrated into a client application. This client application will be responsible of capturing the images for their compression by the selected technique.
+\item[1st Stage] In this stage, the different techniques for image compression/decompression were studied, in order to choose a set of them to be implemented and tested. Once the implementations of the selected techniques were made, they were tested and compared to choose one that was integrated into a client application. This client application is responsible of capturing the images for their compression by the selected technique.
 \end{description}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Methodology}
 	\begin{description}
-\item[2nd Stage] In this stage, the different approaches for web services will be analized, to choose the most appropriate solution for the problem to be solved. Also, a local web server will be mounted, to implement the chosen web service model...
+\item[2nd Stage] In this stage, the different approaches for web services were analyzed, to choose the most appropriate solution for the problem to be solved. Also, a local web server was mounted, in order to implement the chosen web service model. Once the web service was implemented, the decompression technique to reverse the technique selected on the previous stage, was setup on the web service, this, in order to connect the client to the server to send the compressed images, and then testing the process of transmission-reception-decompression. Based on the results from the previous tests, the necessary adjustments were made to ensure both the proper functioning of the connection between the client and server, and the reception of the original image as captured by the client.
 \end{description}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Methodology}
 	\begin{description}
-\item[3rd Stage] In this stage, the work will be focused on the adaptation of the algorithm for facial gestures analysis, since it was originally developed to work in a local environment. This adaptation will include a mechanism to interact with the compression/decompression technique previously developed.
+\item[3rd Stage] In this stage, the work was focused on the adaptation of the algorithm for facial gestures analysis, since it was originally developed to work in a local environment. This adaptation included a mechanism to interact with the compression/decompression technique previously developed, and a mechanism to retrieve and process the results from the facial gesture analysis algorithm, also, a user interface for displaying the results of the analysis was created.
+\end{description}
+\end{frame}
 
-Finally, a set of experiments oriented to test the different components of the architecture (such as compression, quality of results, processing time, etc.) will be developed and applied.
+\begin{frame}
+	\frametitle{Methodology}
+	\begin{description}
+\item[4th Stage] In this stage, the work was focused on the adaptation of the algorithm for facial gestures analysis, since it was originally developed to work in a local environment. This adaptation included a mechanism to interact with the compression/decompression technique previously developed, and a mechanism to retrieve and process the results from the facial gesture analysis algorithm, also, a user interface for displaying the results of the analysis was created.
 \end{description}
 \end{frame}
 
@@ -273,6 +264,7 @@ Finally, a set of experiments oriented to test the different components of the a
 	\includegraphics[scale=0.30]{img/schedule.png}
 \end{frame}
 
+\begin{comment}
 \section{Infraestructure}
 \begin{frame}
 	\frametitle{Infraestructure}
@@ -293,7 +285,7 @@ Finally, a set of experiments oriented to test the different components of the a
 	\item Both the client and the server, will be developed on open source software.
 	\end{itemize}
 \end{frame}
-
+\end{comment}
 
 \section{References}
 \begin{frame}[allowframebreaks]{References}
