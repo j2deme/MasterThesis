@@ -1,0 +1,88 @@
+The study of facial gestures has acquired an increasing interest since it has a huge application area. Facial gestures can be defined as a movement produced in the face by muscles while contracting (see Figure \ref{fig:Facial muscles}) with the objective to transmit thoughts or emotions, for example when a person communicates with others. The interpretation of non-verbal human communication, like facial gesticulation during a talk, is a very common activity and is done intrinsically. Equally important is the interpretation of gestures, through this, people can improve their interpersonal understanding. For example, by analyzing the mood of a speaker it is possible to confirm the intention of a message.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{images/Figure11FacialMuscles_name_2.png}
+\caption{Facial muscles}
+\label{fig:Facial muscles}
+\end{figure}
+
+Traditionally, computational applications have tried to interpret emotion by associating a facial image to one of the seven general expressions (such as fear, anger, happiness, etc) but they are too general and they do not evaluate the symmetry of the emotion. This can be solved considering the psychological perspective of the emotions. According to Ekman \cite{Hager1979} the symmetry of a gesticulation can describe the veracity of a expression. The bases for this are some studies of the amygdala~\cite{Sergerie2008}, which is a region in the brain (located in the medial temporal lobes) that performs the analysis of expressions.
+
+However, this task is complex, since involves temporal processing of muscles contractions. To approach this problem, one can look at biological systems that perform this analysis accurately. An example of this is the human brain, which can perform the analysis even under varying environment conditions like: illumination changes, occlusion and pose changes. This is a motivation for the developing of bio-inspired systems based on the behavior of the amygdala, more precisely modeling the neuron interaction for analysis facial motion produced by the gestures.
+
+From all the involved parts gesture eye gaze is the most important element since it express sincerity and credibility. Together, all the elements of the facial muscles can transmit the feelings of the speaker, from happiness, to depth concern. This was previously affirmed by Darwin~\cite{Darwin1872}, who stated that facial gesticulation for emotion transmition is innate and very similar for all people, since we evolved very similarly. His theory was not accepted before due to some detractors like Bruner et al.~\cite{Bruner1954}. Later, Ekman et al. \cite{Hager1979} solved this issue definitively by pointing out methodological problems that had confused other researchers. They showed that observers could agree on how to label both posed and spontaneous facial expressions in terms of either emotional categories or emotional dimensions. Much evidence, including reanalysis of negative studies, indicated that facial expressions can provide accurate information about emotion.
+
+Therefore the analysis of facial expressions constitutes a critical and complex portion of our non-verbal social interactions. Over the past years there has been an increasing interest on developing automated computational tools for facial expression analysis.
+
+To address this analysis it is necessary to perform two main tasks: face acquisition and facial feature extraction. In the first one, techniques have been developed to deal with the extraction and normalization of the face, considering variations in the pose and illumination. However, most of the effort has been focused on the feature extraction issue~\cite{Fasel1999}, since techniques like appearance-based model try to deal with significant variations in the acquired face images without relying on normalization.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=1.0]{images/Figure6Brain.png}
+    \caption{Brain anatomy}
+    \label{fig:Brain anatomy}
+\end{figure}
+
+The analysis problem has been approached from two main streams~\cite{Fasel1999}: facial deformation extraction models and facial motion extraction models. Motion extraction approaches directly focus on facial changes produced by facial expressions, whereas deformation-based methods contrast the visual information against face models to extract features product of expressions and not by age deformation like wrinkles.
+
+Another approach to solve this problem, is by looking at biological systems that perform accurately this task. The human brain can analyze the information from the face using an area called amygdala which receives connections from other areas like visual cortex. How exactly the amygdala works remains unknown; however, it is know that this area sends impulses to the hypothalamus for activation of the sympathetic nervous system. Several studies have confirmed that the amygdala receives inputs from visual cortex when it comes to emotion processing. Lateralization of processing visual information in the amygdala might indicate symmetry analysis activity which was first found by Ekman et al. \cite{Hager1979}. In their studies they found that emotion understanding is directly related to symmetrical analysis of opposed facial regions.
+
+This information is relevant since provides hints on the role of the amygdala during the expression of emotions and visual interpretation of them. How the visual information is processed remains unclear, but it is known that the information is processed laterally (information is processed in one hemisphere). This can be used as a source of inspiration to build a neural architecture that allows processing opposed facial regions to interpretate emotions. Previously some researchers have used traditional neural networks (NN) to recognize emotions from face images\cite{Spiros2005}; however, NN in those works are used for recognition purposes though symmetry understanding in facial gestures requires analyzing the evolution of muscles during gesticulation rather than comparing gesture moments. This means that not all neural networks models are adequate for this task, in fact NN approaches can be classified in 3 generations, the two first are usually related to recognition tasks while the third also allows temporal information processing.
+
+\subsection{Generations of Neural Networks}
+Over the past hundred years, research has accumulated knowledge about the structure and function of the brain. The elementary processing units in the central nervous system are neurons which are connected to each other in an intricate pattern. Examples of this types of neurons are sketched in Figure \ref{fig:NeuronTypes} which shows a drawing by Ram\'on y Cajal~\cite{Cajal1995}, one of the pioneers of neuroscience around 1900. In his work, he distinguished several types of neurons, with different physical structures like triangular or circular. This picture gives a glimpse of the network of neurons in the cortex. In fact, cortical neurons and their connections are packed into a dense network with more than 104 cell bodies and several kilometers of ``wires'' per cubic millimeter. In all areas, however, neurons of different sizes and shapes form the basic elements. Wolfgang Maass~\cite{Maass1996} outlined past and current artificial neural network research into three generations and made the following observations.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.7]{images/Figure1Neuron_Types.png}
+    \caption[Types of neurons]{\small{There are three kinds of neurons: motor neurons (for conveying motor information), sensory neurons (for conveying sensory information), and interneurons (which convey information between different types of neurons). The image identifies how neurons come in various shapes and sizes.}}
+    \label{fig:NeuronTypes}
+\end{figure}
+
+A typical neuron can be divided into three functional parts called: dendrites, soma, and axon (see Figure \ref{fig:NeuronStructure}). Roughly speaking, the dendrites play the role of the ``input device'' that collects signals from other neurons and transmits them to the soma. The soma is the ``central processing unit'' that performs an important non-linear processing step: If the total input exceeds a certain threshold, then an output signal is generated. The output signal is taken over by the ``output device'', the axon, which delivers the signal to other neurons.
+
+The junction between two neurons is called a synapse. Let us suppose that a neuron sends a signal across a synapse, the sender is called presynaptic cell and the receiver is called postsynaptic cell. A single neuron in vertebrate cortex often connects to more than $10^4$ postsynaptic neurons. Many of its axonal branches end in the direct neighborhood of the neuron, but the axon can also stretch over several centimeters so as to reach to neurons in other areas of the brain.
+
+In the literature there are different computational models that intent to simulate the behavior of these neurons communities. Roughly, they can be divided in three generations, considering their chronological appearance order. Our attention is centered in the third generation since it allows temporal processing of input patterns.
+
+The \textbf{first generation} is based on the McCulloch-Pitts neuron (also known as a perceptron or a threshold-gate) as the basic computation unit. Models of the first generation, such as the multi-layer perceptron, use digital input and output, usually binary or bipolar. The perceptron is a type of artificial neural network (ANN) invented in 1957 at the Cornell Aeronautical Laboratory by Frank Rosenblatt~\cite{Rosenblatt1960}.
+
+The \textbf{second generation} is based on computation units (neurons) that use an activation function of a continuous set of possible output values. This generation, like first one, can compute arbitrary boolean functions (after using a threshold). Also, a concept of hidden layer appeared, through it more complex functions can be approximated~\cite{Rosenblatt1962}. Important to many implementations is the fact that second generation networks support learning algorithms based on gradient descent, such as error back-propagation.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.6]{images/Figure2NeuronStructure.png}
+    \caption{Structure of a neuron}
+    \label{fig:NeuronStructure}
+\end{figure}
+
+The \textbf{third generation} is known as Spiking Neural Networks (SNN) model. They increase the level of realism in a neural simulation, in addition to neuronal and synaptic states. The SNNs also incorporate the concept of time into their operating model, the idea is that neurons in the SNN model do not fire at each propagation cycle (as it happens with typical multi-layer perceptron networks), but rather fire only when a membrane potential\footnote{An intrinsic quality of the neuron related to its membrane electrical charge.} reaches a threshold. When a neuron fires generates a signal that travels to other neurons that are stimulated (excited or inhibited) by this signal. In the context of spiking neural networks, the current activation level (modeled as some differential equation) is normally considered to be the state of the neuron, with incoming spikes pushing this value higher, and then either firing or decaying over time. Various coding methods exist for interpreting the outgoing spike train as a real-value number, either relying on the frequency of spikes, or the timing between spikes, to encode information.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=4.0]{images/Figure10SNN.png}
+    \caption{Spiking Neural Network}
+    \label{fig:Spiking Neural Network}
+\end{figure}
+
+These networks, like multi-layer perceptron networks, can approximate continuous arbitrary functions, as well as, temporal encoded inputs and outputs~\cite{Maass1996}.  This kind of neural network, in principle, can be used for information processing applications the same way as traditional artificial neural networks. However, due to their more realistic properties, they can also be used to study the operation of biological neural circuits. Some successful models of SNNs have been used to solve real-life problems, such as, navigation in mobile communities of robots \cite{WangHouZou2008}.
+
+\subsection{Spiking Neural Networks}
+In practice, there is a major difference between the theoretical power of spiking neural networks. Some large scale neural network models have been designed to take advantage of pulse coding found in spiking neural networks. One of the most exciting characteristics of spiking neural networks (with the potential to create a step-change in our knowledge of neural computation) is that they are innately embedded in time \cite{Maass1996}.
+
+Spike latencies, axonal conduction delays, refractory periods, neuron resonance and network oscillations all give rise to an intrinsic ability to process time-varying data in a more natural and computationally powerful way than is available to 2nd generation models. Real brains are embedded in a time-varying environment; almost all real-world data and human or animal mental processing has a temporal dimension. Evidence is growing that rhythmic brain oscillations are strongly connected to cognitive processing. This type of processing is well suited to problems like face gesticulation characterization, since this problem implies the processing of spatial features over time periods to abstract their relations over time.
+
+\begin{figure}[h]
+    \centering
+   \includegraphics[scale=0.7]{images/Figure3Comparison.png}
+    \caption{Comparison of spiking models: biological plausibility against implementation cost.}
+    \label{fig:Comparison}
+\end{figure}
+
+In the literature there are several SNN models that have different characteristics that make them desirable for specific types of problems. According to Izhikevich \cite{Izhikevich2004}, to define the model that will be used to interpret facial motion it is necessary to consider two aspects about the selected SNN: biological plausibility, and computational time cost. A comparison between several SNN models is presented in Figure \ref{fig:Comparison}, where the zero shows those models means with the highest efficiency in terms of computational viability.
+
+%Linking part with Web services and image compression techniques
+The gesture analysis methods, traditionally, can be used in situations like job interviews or business meetings where participants are in the same place, however, nowadays these events are carried out online, thereby decreasing the perception of those involved. Therefore arises the need of a tool or architecture that allows the use of gesture analysis methods online, but this task is not trivial, because it requires mechanisms for exchanging data between the client and the server. This issue could be solved by the use of web services, a technology that has been used for streaming video and audio.
+
+However, given the characteristics of Internet services in the country, the transfer of information would not be very optimal, therefore a technique that allows the compression of images without loss of quality, is needed, in order to be able to perform the gesture analysis more efficiently.

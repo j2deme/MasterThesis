@@ -1,0 +1,48 @@
+\subsection{Basic Concepts}
+An image is essentially a 2-D signal processed by the human visual system. The signals representing images are usually in analog form. However, for processing, storage and transmission by computer applications, they are converted from analog to digital form. A digital image, then, is basically a 2-Dimensional array of pixels.
+
+Images form the significant part of data, particularly in remote sensing, biomedical and video conferencing applications. The use and dependence on information and computers continue to grow, and so does the need for efficient ways of storing and transmitting large amounts of data.
+
+Image compression addresses the problem of reducing the amount of data required to represent a digital image. It is a process intended to yield a compact representation of an image, thereby reducing the image storage/transmission requirements. Compression is achieved by the removal of one or more of the three basic data redundancies: coding redundancy, interpixel redundancy and psychovisual redundancy\cite{Kumar:2007}.
+
+Image compression techniques reduce the number of bits required to represent an image by taking advantage of these redundancies. An inverse process called decompression (decoding) is applied to the compressed data to get the reconstructed image. The objective of compression is to reduce the number of bits as much as possible, while keeping the resolution and the visual quality of the reconstructed image as close to the original image as possible. Image compression systems are composed of two distinct structural blocks : an encoder and a decoder.
+
+Some benefits of using compression on images are:
+\begin{itemize}
+\item It provides a potential cost savings associated with sending less data over switched telephone network
+where cost of call is really usually based upon its duration.
+\item It not only reduces storage requirements but also overall execution time.
+\item It also reduces the probability of transmission errors since fewer bits are transferred.
+\item It also provides a level of security against illicit monitoring.
+\end{itemize}
+
+\subsection{Types of Redundancy}
+As stated before, the compression is based on the removal on one or more of the following redundancies:
+\begin{description}
+\item[Coding Redundancy] is present when less than optimal code words are used. A code is a system of symbols (letters, numbers, bits, and the like) used to represent a body of information or set of events. Each piece of information or events is assigned to a sequence of code symbols, called a code word. The number of symbols in each code word is its length. The 8-bit codes that are used to represent the intensities in the most 2-D intensity arrays contain more bits than are needed to represent the intensities.
+\item[Interpixel Redundancy] Also known as spatial or temporal Redundancy, is based on the fact that, as the pixels of most 2-D intensity arrays are correlated spatially, information is unnecessarily replicated in the representations of the correlated pixels. In a video sequence, temporally correlated pixels also duplicate information.
+\item[Psychovisual Redundancy] Most 2-D intensity arrays contain information that is ignored by the human visual system and extraneous to the intended use of the image. It is redundant in the sense that it is not used. Image compression research aims at reducing the number of bits needed to represent an image by removing the spatial and spectral redundancies as much as possible.
+\end{description}
+
+\subsection{Image Compression Techniques}
+Image compression is applied to reduce the amount of data required to represent a digital image. Image compression is broadly classified into lossless and lossy image compression\cite{Chandran:2012}.
+\begin{description}
+\item[Lossless Compression Tecniques] The feature of the lossless compression technique is that the original image can be perfectly recovered from the compressed image. It is also known as entropy coding since it use decomposition techniques to eliminate or minimize redundancy\cite{Woods:2008}. Lossless compression is mainly used for applications like medical imaging, where the quality of image is important. The following are the methods that fall under lossless compression:
+	\begin{itemize}
+	\item Run length encoding.
+	\item Huffman encoding.
+	\item LZW coding.
+	\item Area coding.
+	\end{itemize}
+\item[Lossy Compression Techniques] Lossy compression technique provides higher compression ratio than lossless compression. In this method, the compression ratio is high; the decompressed image is not exactly identical to the original image, but close to it. Different types of lossy compression techniques are widely used, characterized by the quality of the reconstructed images and its adequacy for applications. The quantization process applied in lossy compression technique results in loss of information. After quantization, entropy coding is done like lossless compression. The decoding is a reverse process. The entropy decoding is applied to compressed data to get the quantized data. Dequantization is applied to it and finally the inverse transformation is performed to get the reconstructed image. The methods that fall under lossy compression technique are listed below:
+	\begin{itemize}
+	\item Vector quantization.
+	\item Fractal coding.
+	\item Block truncation coding.
+	\item Sub band coding.
+	\item Transformation coding.
+	\end{itemize}
+\end{description}
+
+\subsection{Lossless Compression VS Lossy Compression}
+In lossless compression schemes, the reconstructed image, after compression, is numerically identical to the original image. However lossless compression can only achieve a modest amount of compression. An image reconstructed following lossy compression contains degradation relative to the original. Often this is because the compression scheme completely discards redundant information. However, lossy schemes are capable of achieving much higher compression. Under normal viewing conditions, no visible loss is perceived (visually lossless)\cite{Dhawan:2011}.
