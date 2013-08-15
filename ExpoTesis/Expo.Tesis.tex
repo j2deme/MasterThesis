@@ -1,4 +1,5 @@
 % arara: pdflatex: { shell: yes }
+% arara: bibtex
 % arara: pdflatex: { shell: yes }
 % arara: clean: { files: [Expo.Tesis.aux, Expo.Tesis.log, Expo.Tesis.nav, Expo.Tesis.out, Expo.Tesis.snm, Expo.Tesis.toc, Expo.Tesis.idx, Expo.Tesis.ilg, Expo.Tesis.ind, Expo.Tesis.vrb, Expo.Tesis.fdb_latexmk, Expo.Tesis.pyg]}
 \documentclass[compress]{beamer}
@@ -33,7 +34,10 @@
 \usepackage{comment}
 %%Pygments%%
 \usepackage{fancyvrb}
-\usepackage{color}
+\usepackage{xcolor}
+\definecolor{SkyblueDark}{HTML}{204A87}
+\setbeamercolor{frametitle}{fg=white}
+\setbeamercolor{structure}{fg=SkyblueDark}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title Page Info %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -41,7 +45,7 @@
 \title{Plataforma web para el an\'alisis de la gesticulaci\'on facial}
 %\subtitle{POO}
 \author[Jaime Jes\'us Delgado Meraz]{Jaime Jes\'us Delgado Meraz\\{\small Advisor: Pedro Luis S\'anchez Orellana}}
-\date{\today}
+\date{Agosto 2013}
 \institute[ITCV]{Maestr\'ia Profesionalizante en Sistemas Computacionales\\Divisi\'on de Estudios de Posgrado de Investigaci\'on\\Instituto Tecnol\'ogico de Ciudad Victoria}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -56,7 +60,7 @@
 \AtBeginSection[]
 {
   \begin{frame}
-    \frametitle{Table of Contents}
+    %\frametitle{Table of Contents}
 %    \begin{multicols}{2}
 	\tableofcontents[currentsection]
 %	\end{multicols}
@@ -139,7 +143,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Objectives (cont.)}
+	\frametitle{Objectives}
 	\begin{block}{Specific}
 		\begin{enumerate}
 		\item Implement an image compression technique that allows fast Internet broadcasting.
@@ -259,12 +263,19 @@
 \end{description}
 \end{frame}
 
+\begin{frame}[t,allowframebreaks]\frametitle{Results}
+
+\end{frame}
+
+\begin{frame}[t]\frametitle{Conclusion}
+\end{frame}
+
+\begin{comment}
 \section{Schedule}
 \begin{frame}
 	\includegraphics[scale=0.30]{img/schedule.png}
 \end{frame}
 
-\begin{comment}
 \section{Infraestructure}
 \begin{frame}
 	\frametitle{Infraestructure}
@@ -292,7 +303,7 @@
 \beamertemplatebookbibitems
 \bibliographystyle{acm}
 %\bibliographystyle{plainnat}
-\bibliography{Protocolo.bib}
+\bibliography{Tesis}
 \end{frame}
 
 \end{document}
