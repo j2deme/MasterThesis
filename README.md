@@ -1,4 +1,5 @@
-#Tesis de Maestría
+# Tesis de Maestría
+
 Este repositorio contiene los documentos relacionados con mi tesis de maestría.
 
 Incluye (o incluirá en el futuro):
@@ -8,4 +9,4 @@ Incluye (o incluirá en el futuro):
 - Los capítulos que componen la tesis.
 - La exposición final de defensa de tesis.
 
-[@j2deme](https://twitter.com/j2deme)
+[@j2deme](https://github.com/j2deme)
